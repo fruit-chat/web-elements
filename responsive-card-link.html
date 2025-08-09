@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gradient Card Navigation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ---------- Global Variables ---------- */
+:root {
+  --red: #f83600;
+  --orange: #f5aa4e;
+  --card-bg: #fefefe;
+  --text-color: #020202;
+}
+
+/* ---------- Dark Mode Support ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-bg: #1e1e1e;
+    --text-color: #fefefe;
+  }
+}
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Body Styling ---------- */
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(45deg, var(--red) 55%, #fe8c00);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ---------- Card Styling ---------- */
+.card {
+  background: var(--card-bg);
+  color: var(--text-color);
+  padding: 1.8em 2.2em;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.33);
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.card h1 {
+  font-weight: 600;
+}
+
+.card p {
+  margin-top: 0.7em;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.card .nav {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 1em;
+}
+
+.card .nav a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.125rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* ---------- Gradient Hover Effects ---------- */
+.home {
+  color: var(--text-color);
+  background: linear-gradient(45deg, var(--orange), var(--orange));
+  background-position: right;
+  background-size: 0% 100%;
+  background-repeat: repeat-y;
+  transition: background-size 300ms ease-in-out;
+}
+.home:hover {
+  background-size: 100% 100%;
+  background-position: left;
+}
+
+.news {
+  color: var(--text-color);
+  background: linear-gradient(45deg, var(--orange), var(--orange));
+  background-position: center bottom;
+  background-size: 0% 4px;
+  background-repeat: no-repeat;
+  transition: background-size 300ms ease-in-out;
+}
+.news:hover {
+  background-size: 100% 4px;
+}
+
+.forum {
+  color: var(--text-color);
+  background: linear-gradient(45deg, var(--orange), var(--orange));
+  background-position: bottom left;
+  background-size: 0% 4px;
+  background-repeat: no-repeat;
+  transition: background-size 300ms ease-in-out;
+}
+.forum:hover {
+  background-size: 100% 4px;
+}
+
+.about {
+  color: var(--text-color);
+  background: linear-gradient(45deg, var(--orange), var(--orange));
+  background-position: bottom;
+  background-size: 100% 4px;
+  background-repeat: repeat-x;
+  transition: background-size 400ms ease-in-out;
+}
+.about:hover {
+  background-size: 100% 50px;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ---------- Mobile Adjustments ---------- */
+@media (max-width: 600px) {
+  .card {
+    padding: 1.2em 1.5em;
+  }
+  .card p, .card .nav a {
+    font-size: 1rem;
+  }
+  .card .nav {
+    gap: 8px;
+    justify-content: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Welcome!</h1>
+  <p>This is a responsive card with gradient hover navigation, animations, and dark mode support.</p>
+  <ul class="nav">
+    <li><a href="#" class="home">Home</a></li>
+    <li><a href="#" class="news">News</a></li>
+    <li><a href="#" class="forum">Forum</a></li>
+    <li><a href="#" class="about">About</a></li>
+  </ul>
+</div>
+
+</body>
+</html>
