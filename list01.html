@@ -1,0 +1,60 @@
+--------------------------- */
+.list01 {
+    list-style: none;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+li.list01.li { list-style: none; }
+.list01 li {
+    background-color: #f0f0f0;
+    font-size: 20px;
+    line-height: 1.3em;
+    font-family: var(--text-font), sans-serif;
+    font-weight: 500;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0.2, 0.3, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+.tdi_44 h2, .tdi_44 h3 { padding-top: 20px; }
+.list01 li:hover { background-color: #e0e0e0; }
+.list01 a {
+    font-family: var(--text-font);
+    text-decoration: none;
+    color: #bb0000;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+.list01 a:hover { color: #bb0000; }
+.list01 a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    right: 0;
+    bottom: -2px;
+    background-color: #4214e6;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+.list01 a:hover::after {
+    visibility: hidden;
+    transform: scaleX(0);
+}
+@media(max-width: 676px) {
+    .list01 { padding: 5px; }
+    .list01 li { font-size: 16px; padding: 5px; }
+    .list01 a:hover { transform: scale(1.05); }
+}
+.list01 li::before {
+    content: "\E912";
+    color: #bb0000;
+    margin-right: 10px;
+    font-family: "newspaper";
+    font-weight: 600;
+    display: inline-block;
+    vertical-align: middle;
+}
